@@ -1,0 +1,123 @@
+<!DOCTYPE html> 
+ <html> 
+ <head> 
+   <title>Tembot</title> 
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+   <script src="main.js"></script> 
+   <link rel="stylesheet" href="style.css"> 
+ <link rel="preconnect" href="https://fonts.googleapis.com"> 
+ <link rel="preconnect" href="https://fonts.googleapis.com"> 
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+ <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&display=swap" rel="stylesheet"> 
+ <script> 
+ function openForm() { 
+   document.getElementById("myForm").style.display = "block"; 
+ } 
+  
+ function closeForm() { 
+   document.getElementById("myForm").style.display = "none"; 
+ } 
+  
+  
+ window.onload = function() { 
+     var textElement = document.getElementById("text"); 
+     var texts = ["Initializing...", "Checking Temu server...", "Verifying code...", "Device simulating...", "Making New User..."]; 
+     var currentIndex = 0; 
+  
+     function changeText() { 
+       textElement.innerHTML = texts[currentIndex]; 
+       currentIndex = (currentIndex + 1) % texts.length; 
+  
+       if (currentIndex === 0) { 
+         clearInterval(intervalId); 
+         setTimeout(displaySuccess, 10000); // Display "Success" after 10 seconds 
+       } 
+     } 
+  
+     function displaySuccess() { 
+       textElement.innerHTML = "     Created Successfully!"; 
+     } 
+  
+     var intervalId = setInterval(changeText, 5000); 
+   }; 
+  
+  
+  
+      // Get references to the loader and icon elements 
+     const loader = document.getElementById('loader'); 
+     const icon = document.getElementById('icon'); 
+  
+     // Function to hide the loader and show the icon 
+     function showIcon() { 
+       boot.style.display = 'none'; 
+       small.style.display = 'block'; 
+     } 
+  
+     // Set a timeout to call the showIcon function after 34 seconds (35000 milliseconds) 
+     setTimeout(showIcon, 35000); 
+   </script> 
+ </script> 
+ </head> 
+ <body> 
+   <div class="logo"> 
+     <img src="temuselogo.png" alt="Logo"> 
+   </div> 
+  
+   <form> 
+     <p>Enter Temu Code</p> 
+     <input type="text" placeholder="Enter your code.."> 
+  
+      <p>Select a Device</p> 
+   <form> 
+     <select id="device-type" name="device-type"> 
+       <option value="">Select a device </option> 
+       <option value="iPhone X">iPhone X</option> 
+       <option value="Samsung Galaxy S21">Samsung Galaxy S21</option> 
+       <option value="Google Pixel 6">Google Pixel 6</option> 
+       <option value="OnePlus 9 Pro">OnePlus 9 Pro</option> 
+       <option value="Xiaomi Mi 11">Xiaomi Mi 11</option> 
+       <option value="LG Velvet">LG Velvet</option> 
+       <option value="Sony Xperia 1 III">Sony Xperia 1 III</option> 
+       <option value="Huawei P40 Pro">Huawei P40 Pro</option> 
+       <option value="Motorola Edge">Motorola Edge</option> 
+       <option value="Nokia 8.3">Nokia 8.3</option> 
+       <option value="Oppo Find X3 Pro">Oppo Find X3 Pro</option> 
+       <option value="Vivo X60 Pro">Vivo X60 Pro</option> 
+       <option value="Realme GT">Realme GT</option> 
+       <option value="Asus ROG Phone 5">Asus ROG Phone 5</option> 
+       <option value="Lenovo Legion Phone Duel 2">Lenovo Legion Phone Duel 2</option> 
+       <option value="iPhone 12">iPhone 12</option> 
+       <option value="Samsung Galaxy Note 20">Samsung Galaxy Note 20</option> 
+       <option value="Google Pixel 5">Google Pixel 5</option> 
+       <option value="OnePlus 8 Pro">OnePlus 8 Pro</option> 
+       <option value="Xiaomi Mi 10">Xiaomi Mi 10</option> 
+     </select> 
+  
+     <br><br>   
+  
+    </form> 
+      <input type="submit" value="Create New User" onclick="showRandomOverlayLoader()"> 
+  
+  
+   <div id="overlay" class="overlay"> 
+     <div class="overlay-content"> 
+     </div> 
+   </div> 
+  
+  
+  
+    <!-- Random overlay loader --> 
+   <div id="random-overlay-loader" class="random-overlay-loader"> 
+        <div class="random-container"> 
+       <div id="text">Loading</div> 
+  
+     <div id="boot" class="random-loader"></div> 
+     <div id="small" class="icon"><img src="tick.png" alt=""></div> 
+  
+   </div> 
+   </div> 
+  
+  
+ </body> 
+ </html> 
+ 
